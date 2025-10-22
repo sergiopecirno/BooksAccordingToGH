@@ -90,17 +90,25 @@ a:hover { color: var(--text); text-decoration: underline; }
 }
 
 /* Responsive: stack into one column on small screens */
-@media (max-width: 480px) {
+@media (max-width: 700px) {
   .book-wrapper {
     grid-template-columns: 1fr;
     max-width: 100%;
+  }
+  /* Ensure each book card has a consistent width and is centered in single-column layout */
+  .book {
+    width: 100%;
+    max-width: 560px; /* limit card width on narrow screens */
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 /* Phone-specific: make the card and image smaller and reduce padding/fonts */
 @media (max-width: 480px) {
   .book {
-    padding: 0.75rem;
+  padding: 0.75rem;
     min-height: 0;
     border-radius: 10px;
     font-size: 0.95rem; /* slightly smaller text */
