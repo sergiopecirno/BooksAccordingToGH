@@ -90,7 +90,7 @@ a:hover { color: var(--text); text-decoration: underline; }
 }
 
 /* Responsive: stack into one column on small screens */
-@media (max-width: 700px) {
+@media (max-width: 480px) {
   .book-wrapper {
     grid-template-columns: 1fr;
     max-width: 100%;
