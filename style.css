@@ -96,3 +96,26 @@ a:hover { color: var(--text); text-decoration: underline; }
     max-width: 100%;
   }
 }
+
+/* Phone-specific: make the card and image smaller and reduce padding/fonts */
+@media (max-width: 480px) {
+  .book {
+    padding: 0.75rem;
+    min-height: 0;
+    border-radius: 10px;
+    font-size: 0.95rem; /* slightly smaller text */
+  }
+
+  .book-wrapper img {
+    max-width: 160px; /* shrink images on phones */
+    margin-bottom: 0.75rem;
+  }
+
+  .book-wrapper {
+    gap: 1rem;
+    padding: 0 0.75rem;
+  }
+
+  h1 { font-size: 1.25rem; }
+  h2 { font-size: 1rem; }
+}

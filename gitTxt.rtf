@@ -1,9 +1,7 @@
 {\rtf1\ansi\ansicpg1252\cocoartf2821
 \cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 .AppleSystemUIFontMonospaced-Regular;}
-{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;\red237\green244\blue251;
-\red255\green255\blue255;}
-{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c100000\c100000\c99985\c0;\cssrgb\c94359\c96720\c98837;
-\cssrgb\c100000\c100000\c99985\c0;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c100000\c100000\c99985\c0;}
 \margl1440\margr1440\vieww18780\viewh9400\viewkind0
 \deftab720
 \pard\pardeftab720\partightenfactor0
@@ -18,8 +16,16 @@ git remote add origin git@github.com:sergiopecirno/BooksAccordingToGH.git\
 git push -u origin main\
 \
 \
-\pard\pardeftab720\partightenfactor0
-\cf2 \cb5 \
 git remote add origin git@github.com:sergiopecirno/BooksAccordingToGH.git\
 git branch -M main\
-git push -u origin main}
+git push -u origin main\
+\
+# from the repo root\
+git status                # just to see what's changed\
+git add -A                # stage everything you've modified/added/deleted\
+git commit -m "Update styles and text"\
+git fetch origin\
+git pull --rebase origin main\
+\
+git push origin main\
+}
