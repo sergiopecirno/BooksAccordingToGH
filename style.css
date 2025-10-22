@@ -1,0 +1,98 @@
+/* Using the Inter font (google) */
+/* Apply to the entire document */
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1; /* Optional: Enables OpenType features for better rendering in some browsers */
+  /* Color system for dark theme */
+  --bg: #0b1220; /* page background */
+  --surface: #0f1724; /* card surface */
+  --muted: #94a3b8; /* secondary text */
+  --text: #3ab7ff; /* primary text (light blue) */
+  --accent: #ff91ed; /* accent / headings */
+  --glass: rgba(255,255,255,0.03);
+  --card-radius: 12px;
+  --gap: 2rem;
+  }
+  
+  /* For variable font support (recommended for modern browsers) */
+  @supports (font-variation-settings: normal) {
+    :root {
+      font-family: InterVariable, sans-serif;
+    }
+  }
+
+/* Page-level dark theme styles */
+body {
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.06), transparent), var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 2rem 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tidy up headings */
+h1 {
+  text-align: center;
+  color: var(--text);
+  margin: 0 0 1.25rem 0;
+}
+
+h2 {
+  color: var(--accent);
+  margin: 0 0 0.5rem 0;
+}
+
+a { color: var(--accent); text-decoration: none; transition: color 160ms ease, text-decoration-color 160ms ease; }
+/* Hover uses the same light-blue text color for consistency */
+a:hover { color: var(--text); text-decoration: underline; }
+
+  h1 {
+    text-align: center;
+  }
+.book-wrapper {
+  display: grid;
+  /* two equal columns that stay centered within a max width */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  /* center the grid by constraining its max width and centering with auto margins */
+  max-width: 1000px; /* adjust as needed */
+  margin: 0 auto; /* center the whole grid horizontally */
+  /* align-items: center; */
+  justify-items: center; /* center content inside each grid cell */
+  padding: 0 1rem; /* small side padding on narrow viewports */
+}
+
+.book-wrapper h2{
+    align-self: start;
+}
+
+.book {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), var(--glass));
+  border-radius: var(--card-radius);
+  padding: 1.25rem;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+  border: 1px solid rgba(255,255,255,0.04);
+  min-height: 160px;
+}
+
+.book-wrapper img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+
+/* Responsive: stack into one column on small screens */
+@media (max-width: 700px) {
+  .book-wrapper {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+}
