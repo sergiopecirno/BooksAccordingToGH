@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews - Books According to G.H.</title>
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <!-- import CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reviews.css">
+    <style>
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Books According to G.H.</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="vote.html" class="nav-link">Vote & Review</a>
+                </li>
+                <li class="nav-item">
+                    <a href="reviews.html" class="nav-link active">Reviews</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1>Member Reviews</h1>
+
+    <div class="reviews-wrapper">
+        <!-- October Book -->
+        <div class="review-section" id="passion" data-book-id="passion">
+            <h2>The Passion According to G.H.</h2>
+            <p class="book-author">by Clarice Lispector</p>
+            
+            <div class="review-stats">
+                <div class="stat">
+                    <span class="stat-label">Average Rating:</span>
+                    <span class="avg-rating">No votes yet</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Total Reviews:</span>
+                    <span class="review-count">0</span>
+                </div>
+            </div>
+
+            <div class="reviews-container"></div>
+        </div>
+
+        <!-- December Book -->
+        <div class="review-section" id="flow-tears" data-book-id="flow-tears">
+            <h2>Flow My Tears, the Policeman Said</h2>
+            <p class="book-author">by Philip K. Dick</p>
+            
+            <div class="review-stats">
+                <div class="stat">
+                    <span class="stat-label">Average Rating:</span>
+                    <span class="avg-rating">No votes yet</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Total Reviews:</span>
+                    <span class="review-count">0</span>
+                </div>
+            </div>
+
+            <div class="reviews-container"></div>
+        </div>
+    </div>
+
+    <script src="reviews.js"></script>
+</body>
+</html>

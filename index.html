@@ -1,28 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books According to G.H.</title>
+    <!-- Inter font -->
     <link rel="preconnect" href="https://rsms.me/">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <!-- import CSS -->
     <link rel="stylesheet" href="style.css">
+    <script defer src="index.js"></script>
+    <style>
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+    </style>
 </head>
+
 <body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Books According to G.H.</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="vote.html" class="nav-link">Vote & Review</a>
+                </li>
+                <li class="nav-item">
+                    <a href="reviews.html" class="nav-link">Reviews</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
     <h1>Books According to G.H.</h1>
     
     <div class="book-wrapper">
-        <div class="book">
-            <h2> October Reading </h2>
-            <h2> The Passion According to G.H. </h2>
-            <p> <b> Author: </b> <a href = "https://en.wikipedia.org/wiki/Clarice_Lispector"  target="_blank" >Clarice Lispector</a> </p>
+        
+        <h2>October Reading</h2>
+        
+        <div class="book-container">
+            <div class="book-info">
+                <h2><b>Book:</b> The Passion According to G.H. [<a href="https://en.wikipedia.org/wiki/The_Passion_According_to_G.H." target="_blank">Wiki</a>]</h2>
+                <p><b>Author:</b> <a href="https://en.wikipedia.org/wiki/Clarice_Lispector" target="_blank">Clarice Lispector</a></p>
+                <p><b>Group Rating:</b> <span id="passion-rating">No votes yet</span> [<a href="vote.html" target="_blank">Vote</a>]</p>
+                <p>View individual book reviews <a href="reviews.html#passion" target="_blank">here</a>.</p>
+            </div>
             <img src="figs/Passion.jpg" alt="Passion">
-            
         </div>
-        <div class="book">
-            <h2> December Reading </h2>
-            <h2> To Be Determined </h2>
-            <p> <b> Author: </b> To Be Determined </p>
-            <img src="figs/TBD.png" alt="To Be Determined">
+        
+        <h2>December Reading</h2>
+
+        <div class="book-container">
+            <div class="book-info">
+                <h2><b>Book:</b> Flow My Tears, the Policeman Said [<a href="https://en.wikipedia.org/wiki/Flow_My_Tears,_the_Policeman_Said" target="_blank">Wiki</a>]</h2>
+                <p><b>Author:</b> <a href="https://en.wikipedia.org/wiki/Philip_K._Dick" target="_blank">Philip K. Dick</a></p>
+                <p><b>Group Rating:</b> <span id="flow-tears-rating">No votes yet</span> [<a href="vote.html" target="_blank">Vote</a>]</p>
+                <p>View individual book reviews <a href="reviews.html#flow-tears" target="_blank">here</a>.</p>
+            </div>
+            <img src="figs/pkd_flow.jpg" alt="Flow My Tears, the Policeman Said">
         </div>
+
     </div>
 
 </body>

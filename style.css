@@ -1,139 +1,449 @@
 /* Using the Inter font (google) */
-/* Apply to the entire document */
 :root {
-  font-family: Inter, sans-serif;
-  font-feature-settings: 'liga' 1, 'calt' 1; /* Optional: Enables OpenType features for better rendering in some browsers */
-  /* Color system for dark theme */
-  --bg: #0b1220; /* page background */
-  --surface: #0f1724; /* card surface */
-  --muted: #94a3b8; /* secondary text */
-  --text: #3ab7ff; /* primary text (light blue) */
-  --accent: #ff91ed; /* accent / headings */
-  --glass: rgba(255,255,255,0.03);
-  --card-radius: 12px;
-  --gap: 2rem;
-  }
-  
-  /* For variable font support (recommended for modern browsers) */
-  @supports (font-variation-settings: normal) {
+    font-family: Inter, sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1;
+}
+
+@supports (font-variation-settings: normal) {
     :root {
-      font-family: InterVariable, sans-serif;
+        font-family: InterVariable, sans-serif;
+    }
+}
+
+/* Reset and base styles */
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body { 
+    margin-bottom: 2cm;
+    padding: 0;
+    background: #f5f1e8;
+    color: #1a1a1a;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Link colors */
+a {
+    color: #ff8c42;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff6b1a;
+}
+
+/* Navigation Bar */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    max-width: none;
+    width: 57.5%;
+    margin: 0 auto;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    text-decoration: none;
+}
+
+.nav-logo:hover {
+    color: #0066cc;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+}
+
+.nav-item {
+    margin: 0;
+}
+
+.nav-link {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 3rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #0066cc;
+    background: rgba(0, 102, 204, 0.05);
+}
+
+.nav-link.active {
+    color: #0066cc;
+    background: rgba(0, 102, 204, 0.1);
+}
+/* Mobile navigation */
+@media (max-width: 850px) {
+    .nav-container {
+        width: 90%;
+        padding: 1rem 0;
+    }
+    
+    .nav-logo {
+        font-size: 1.1rem;
+    }
+    
+    .nav-menu {
+        gap: 1rem;
+    }
+    
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
     }
   }
 
-/* Page-level dark theme styles */
-body {
-  background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.06), transparent), var(--bg);
-  color: var(--text);
-  margin: 0;
-  padding: 2rem 1rem;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%; /* prevent iOS Safari from auto-resizing text */
-}
 
-/* Tidy up headings */
+/* Headings */
 h1 {
-  text-align: center;
-  color: var(--text);
-  margin: 0 0 1.25rem 0;
-}
-
-h2 {
-  color: var(--accent);
-  margin: 0 0 0.5rem 0;
-}
-
-a { color: var(--accent); text-decoration: none; transition: color 160ms ease, text-decoration-color 160ms ease; }
-/* Hover uses the same light-blue text color for consistency */
-a:hover { color: var(--text); text-decoration: underline; }
-
-  h1 {
+    padding: 1rem 0;
+    margin: 1rem auto;
+    width: 57.5%;
     text-align: center;
-  }
-.book-wrapper {
-  display: grid;
-  /* two equal columns that stay centered within a max width */
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2rem;
-  /* center the grid by constraining its max width and centering with auto margins */
-  max-width: 1000px; /* adjust as needed */
-  margin: 0 auto; /* center the whole grid horizontally */
-  /* align-items: center; */
-  justify-items: center; /* center content inside each grid cell */
-  padding: 0 1rem; /* small side padding on narrow viewports */
+    color: #1a1a1a;
 }
 
-.book-wrapper h2{
-    align-self: start;
+h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0.5rem auto;
+    width: 57.5%;
+    color: #1a1a1a;
 }
 
-.book {
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-start;
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), var(--glass));
-  border-radius: var(--card-radius);
-  padding: 1.25rem;
-  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
-  border: 1px solid rgba(255,255,255,0.04);
-  min-height: 160px;
+/* Paragraphs and lists */
+p {
+    margin: 1rem auto;
+    width: 57.5%;
 }
 
-.book-wrapper img {
-  max-width: 300px;
-  height: auto;
-  border-radius: 8px;
-  display: block;
-  margin: 0 auto 1rem auto;
+ul, ol {
+    margin: 1rem auto;
+    width: 57.5%;
+    padding-left: 2rem;
 }
 
-/* Responsive: stack into one column on small screens */
-@media (max-width: 700px) {
-  .book-wrapper {
+li {
+    margin: 0.5rem 0;
+}
+
+/* Quote styling */
+.quote {
+    display: block;
+    padding: 1rem 1.5rem;
+    margin: 1rem auto;
+    width: 57.5%;
+    background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.01));
+    border: 1px solid rgba(0,0,0,0.1);
+    border-left: 4px solid #0066cc;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    font-style: italic;
+    color: #2c3e50;
+}
+
+.quote-author {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    font-style: normal;
+    color: #5a6c7d;
+}
+
+/* Equation styling */
+.equation {
+    display: block;
+    padding: 1rem 1.5rem;
+    margin: 1rem auto;
+    width: 57.5%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* KaTeX display math - remove extra margins */
+.katex-display {
+    margin: 0.5em 0 !important;
+}
+
+/* Figure styling */
+.figure { 
+    grid-template-rows: auto auto;
     grid-template-columns: 1fr;
-    max-width: 100%;
-  }
-  /* Ensure each book card has a consistent width and is centered in single-column layout */
-  .book {
-   width: 100%;
-   /* clamp card width so it never exceeds viewport on iOS Safari
-     min(viewport-safe, fixed px) helps avoid overflow caused by text-scaling */
-   max-width: min(560px, 92vw); /* limit card width but respect viewport */
-    box-sizing: border-box;
-    margin-left: auto;
-    margin-right: auto;
-  }
+    margin: 1rem auto;
+    width: 57.5%;
+    background: #f5f1e8;
+    border: 1px solid rgba(0,0,0,0.1); 
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: grid;
+    align-items: center;
+    padding: 1rem;
 }
 
-/* Phone-specific: make the card and image smaller and reduce padding/fonts */
-@media (max-width: 480px) {
-  .book {
-  padding: 0.75rem;
-    min-height: 0;
-    border-radius: 10px;
-    font-size: 0.95rem; /* slightly smaller text */
-  }
-
-  .book-wrapper img {
-    max-width: 160px; /* shrink images on phones */
-    margin-bottom: 0.75rem;
-  }
-
-  /* Ensure images never overflow the card on iOS Safari */
-  .book img, .book-wrapper img {
+.figure img {
+    grid-row: 1;
+    justify-self: center;
     max-width: 100%;
     height: auto;
     display: block;
-  }
-
-  .book-wrapper {
-    gap: 1rem;
-    padding: 0 0.75rem;
-  }
-
-  h1 { font-size: 1.25rem; }
-  h2 { font-size: 1rem; }
 }
+
+.figure caption {
+    grid-row: 2;
+    margin-top: 1.5rem;
+    color: #1a1a1a;
+    text-align: left;
+    width: 100%;
+    line-height: 1.6;
+    display: block;
+}
+
+.figure-caption {
+    grid-row: 2;
+    margin-top: 1.5rem;
+    color: #1a1a1a;
+    text-align: left;
+    width: 100%;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Prevent KaTeX display math from adding line breaks in captions */
+.figure .katex-display,
+.figure-caption .katex-display,
+caption .katex-display,
+figcaption .katex-display {
+    display: inline-block !important;
+    margin: 0 0.2em !important;
+    padding: 0 !important;
+}
+
+/* Make sure all KaTeX elements in captions stay inline */
+.figure .katex,
+.figure-caption .katex,
+caption .katex,
+figcaption .katex {
+    display: inline !important;
+}
+
+.figure .katex-html,
+.figure-caption .katex-html,
+caption .katex-html,
+figcaption .katex-html {
+    display: inline !important;
+}
+
+.figure .base,
+.figure-caption .base,
+caption .base,
+figcaption .base {
+    display: inline !important;
+}
+
+/* Video wrapper styling */
+.video-wrapper {
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr;
+    margin: 1rem auto;
+    width: 40%;
+    background: #f5f1e8;
+    border: 1px solid rgba(0,0,0,0.1); 
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: grid;
+    align-items: center;
+    padding: 1rem;
+}
+
+.video-wrapper iframe {
+    grid-row: 1;
+    justify-self: center;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 4px;
+}
+
+/* Book container styling */
+.book-container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: start;
+    padding: 1.5rem;
+    margin: 1rem auto;
+    width: 57.5%;
+    background: #f5f1e8;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.book-container .book-info {
+    display: block;
+}
+
+.book-container img {
+    width: 150px;
+    height: 225px;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+}
+
+.book-container h2 {
+    width: 100%;
+    margin: 0.5rem 0;
+    color: #1a1a1a;
+}
+
+.book-container p {
+    width: 100%;
+    margin: 0.5rem 0;
+}
+
+/* Book wrapper for multiple books in a grid */
+.book-wrapper {
+    display: block;
+    margin: 1rem auto;
+    width: 57.5%;
+}
+
+.book-wrapper > h2 {
+    width: 100%;
+    text-align: left;
+    margin: 1.5rem 0 0.5rem 0;
+}
+
+.book-wrapper > h2:first-of-type {
+    margin-top: 0;
+}
+
+.book-wrapper .book-container {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+/* Sources/References styling */
+.sources { 
+    max-width: 57.5%;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 1rem auto;
+    text-align: left;
+}
+
+.sources ul {
+    list-style-type: none;
+    padding: 0;
+    line-height: 1.4;
+    width: 100%;
+    margin: 0;
+}
+
+.sources li {
+    font-size: 0.9rem;
+    font-style: italic;
+    margin: 0.5rem 0;
+}
+
+/* Mobile responsive */
+@media (max-width: 850px) {
+    body {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    .book-container {
+        width: 90%;
+        padding: 1rem;
+    .book-container {
+        width: 90%;
+        padding: 1rem;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .book-container img {
+        width: 150px;
+        height: 225px;
+        object-fit: cover;
+        margin: 1rem auto 0 auto;
+    }   margin: 1rem auto 0 auto;
+    }
+
+    .book-wrapper {
+        width: 90%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    h2, h3, h4, h5, h6 {
+        width: 90%;
+        font-size: 1.3rem;
+    }
+
+    p {
+        width: 90%;
+        font-size: 1rem;
+    }
+
+    ul, ol {
+        width: 90%;
+        font-size: 1rem;
+    }
+
+    .quote {
+        width: 90%;
+        padding: 0.75rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    .equation {
+        width: 90%;
+        font-size: 1.1rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .figure {
+        width: 90%;
+        padding: 0.75rem;
+    }
+
+    .figure-caption {
+        font-size: 0.85rem;
+    }
+
+    .sources {
+        max-width: 90%;
+    }
+
+    .sources li {
+        font-size: 0.85rem;
+    }
+  } 

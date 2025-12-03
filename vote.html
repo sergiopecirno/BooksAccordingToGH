@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote - Books According to G.H.</title>
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <!-- import CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="vote.css">
+    <style>
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Books According to G.H.</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="vote.html" class="nav-link active">Vote & Review</a>
+                </li>
+                <li class="nav-item">
+                    <a href="reviews.html" class="nav-link">Reviews</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1>Rate Our Books</h1>
+
+    <div class="vote-wrapper">
+        <!-- October Book -->
+        <div class="vote-section" data-book-id="passion">
+            <h2>October Reading: The Passion According to G.H.</h2>
+            <p><b>Author:</b> Clarice Lispector</p>
+            
+            <div class="current-rating">
+                <h3>Current Group Rating: <span class="avg-rating">No votes yet</span></h3>
+                <p class="vote-count">0 votes</p>
+            </div>
+
+            <div class="voting-interface">
+                <h3>Cast Your Vote:</h3>
+                <div class="star-rating">
+                    <span class="star" data-rating="1">★</span>
+                    <span class="star" data-rating="2">★</span>
+                    <span class="star" data-rating="3">★</span>
+                    <span class="star" data-rating="4">★</span>
+                    <span class="star" data-rating="5">★</span>
+                </div>
+                <p class="rating-label">Select your rating (1-5 stars)</p>
+                
+                <div class="voter-info">
+                    <input type="text" class="voter-name" placeholder="Your name (optional)" />
+                    <textarea class="voter-comment" placeholder="Optional: Share your thoughts about the book..." rows="3"></textarea>
+                </div>
+                
+                <button class="submit-vote" disabled>Submit Vote</button>
+                <p class="vote-message"></p>
+            </div>
+
+            <div class="votes-list">
+                <h3>All Votes:</h3>
+                <div class="votes-container"></div>
+            </div>
+        </div>
+
+        <!-- December Book -->
+        <div class="vote-section" data-book-id="flow-tears">
+            <h2>December Reading: Flow My Tears, the Policeman Said</h2>
+            <p><b>Author:</b> Philip K. Dick</p>
+            
+            <div class="current-rating">
+                <h3>Current Group Rating: <span class="avg-rating">No votes yet</span></h3>
+                <p class="vote-count">0 votes</p>
+            </div>
+
+            <div class="voting-interface">
+                <h3>Cast Your Vote:</h3>
+                <div class="star-rating">
+                    <span class="star" data-rating="1">★</span>
+                    <span class="star" data-rating="2">★</span>
+                    <span class="star" data-rating="3">★</span>
+                    <span class="star" data-rating="4">★</span>
+                    <span class="star" data-rating="5">★</span>
+                </div>
+                <p class="rating-label">Select your rating (1-5 stars)</p>
+                
+                <div class="voter-info">
+                    <input type="text" class="voter-name" placeholder="Your name (optional)" />
+                    <textarea class="voter-comment" placeholder="Optional: Share your thoughts about the book..." rows="3"></textarea>
+                </div>
+                
+                <button class="submit-vote" disabled>Submit Vote</button>
+                <p class="vote-message"></p>
+            </div>
+
+            <div class="votes-list">
+                <h3>All Votes:</h3>
+                <div class="votes-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="vote.js"></script>
+</body>
+</html>
